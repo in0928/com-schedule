@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{{ url_for('static' ,filename='css/common.css') }}" />
+      {% block css %}
+      {% endblock %}
+  </head>
+  <body >
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary mb-3">
+    <div class="flex-row d-flex">
+        <button type="button" class="navbar-toggler mr-2 " data-toggle="offcanvas" title="Toggle responsive left sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('home') }}" title="Free Bootstrap 4 Admin Template">Dashboard</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="collapsingNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">Home</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="//www.codeply.com">About</a>
+            </li>
+            <li class="nav-item">
+                 <div class="nav-dropdown-wrapper">
+                <a class="nav-link nav-dropdown" href="">Links▾</a>
+                <div class="dropdown-content">
+                    <a class="nav-link" href="https://www.nuskin.com/content/markets/ja_JP/home.html" target="_blank">ニュースキンHP</a>
+                    <a class="nav-link" href="https://www.improveonline.jp/" target="_blank">COM</a>
+                    <a class="nav-link" href="https://www.google.com/" target="_blank">Google</a>
+                </div>
+                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Contact</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">I'm feeling lucky</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Log out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid" id="main">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <!--/col-->
+
+{% block body %}
+{% endblock %}
+
+
+
+<!--/.container-->
+<footer class="container-fluid" style="background: #5a6268;color:#fff;">
+    <p class="text-right small" style="margin-bottom:0;">©Some Copyright Stuff</p>
+</footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>This is a dashboard layout for Bootstrap 4. This is an example of the Modal component which you can use to show content.
+                Any content can be placed inside the modal and it can use the Bootstrap grid classes.</p>
+                <p>
+                    <a href="https://www.codeply.com/go/KrUO8QpyXP" target="_ext">Grab the code at Codeply</a>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary-outline" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--scripts loaded here-->
+<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <script src="{{ url_for('static', filename='js/jquery331.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+        {% block script %}
+        {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'tableTemplate.html' %}
+
+{% block title %}
+{{ t }}
+{% endblock %}
+
+{% block table %}
+    <form class="form-basic" action="" method="post">
+            <div class="col-lg-9 col-md-8" style="max-width:100%;">
+        <div class="table-responsive">
+    <table class="table table-striped" id="com-schedule">
+    <thead class="thead-inverse">
+    <tr>
+        <th></th>
+        <th>日付</th>
+        <th>ユニオン</th>
+        <th>内容</th>
+        <th>時間</th>
+        <th>SP</th>
+        <th>MC/AC</th>
+        <th>会場</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for entry in event_list %}
+    {%- if entry["content"] != ""%}
+    <tr>
+        <td id="going"><button type="submit">Going</button></td>
+        <td>{{ entry["date"] }}</td>
+        <td>{{ entry["union_name"] }}</td>
+        <td>{{ entry["content"] }}</td>
+        <td>{{ entry["time"] }}</td>
+        <td>{{ entry["SP"] }}</td>
+        <td>{{ entry["MC_AC"] }}</td>
+        <td>{{ entry["venue"] }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+    </table></div></div>
+        </form>
+
+{% endblock %}

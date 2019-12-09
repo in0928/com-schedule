@@ -1,0 +1,100 @@
+.col.main.pt-5.mt-3 {
+    min-width: 83.333333%;
+}
+
+div.header h2 {
+    margin-bottom: 30px;
+}
+
+.table-responsive{
+    overflow: auto;
+    height: 510px;
+    margin-bottom: 30px;
+    font-size:12px;
+}
+
+td {
+    min-width: 110px;
+}
+
+td.wide-col {
+    min-width: 180px;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+thead th{
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  background: antiquewhite;
+}
+
+
+tbody th {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  left: 0;
+}
+
+thead th:first-child {
+  left: 0;
+  z-index: 1;
+}
+
+table tr th{
+/*so that the word will not come out of the top when scrolling*/
+      outline: 1px solid antiquewhite;
+      outline-offset: -1px;
+}
+
+th.freeze-col {
+     background: white;
+     font-weight: normal;
+}
+
+/*css for search bar*/
+#table-search{
+    padding: 10px 30px 10px 10px;
+    min-width: 40%;
+}
+
+div.header p.search{
+    display: inline-block;
+    margin-top:0;
+}
+
+div.header #search-by-col-name{
+    padding: 10px 30px 10px 10px;
+    min-width: 40%;
+}
+
+div.pt-5 {
+    padding-top: 1rem !important;
+}
+
+@media screen and (max-width: 590px){
+    #table-search {
+        display:block;
+        width: 100%;
+    }
+    div.header #search-by-col-name {
+        display: inline-block;
+        margin-left:10px;
+        min-width:40%;
+    }
+    div.header p.search {
+        width:100%;
+    }
+}
+
+td#going {
+    min-width: 70px;
+}
+
+
+
+
+

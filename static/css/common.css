@@ -1,0 +1,209 @@
+body, html {
+  height:100%;
+  font-family: sans-serif,"Helvetica Neue",Helvetica,Arial !important;
+}
+
+/* Override */
+.bg-primary {
+    background-color: #2c2c2c !important;
+}
+
+.pl-0 {
+    padding-left: 10px !important;
+}
+
+option {
+    background-color: floralwhite;
+}
+
+thead.thead-inverse{
+    background-color: antiquewhite;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+#sidebar{
+    min-height: 100vh;
+}
+
+div.card.card-default.card-body{
+    border: 0;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border: 0;
+    border-bottom: 2px solid cornflowerblue;
+}
+
+.nav-link:hover{
+    border: 0;
+    border-bottom: 2px solid #dee2e6;
+}
+
+
+
+.header{
+    padding: 20px 30px;
+}
+
+/*copied from W3C tooltip
+should not use the class tooltip
+may be a bootstrap issue*/
+
+p.hovertool {
+    display: inline-block;
+    font-size:14px;
+    float: right;
+    padding: 10px;
+    color: cornflowerblue;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hiddentext {
+  visibility: hidden;
+  width: 250px;
+  color: black;
+  text-align: left;
+  border-radius: 6px;
+  padding: 11px;
+  font-size:12px;
+  background: white;
+  color: darkcyan;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -12px;
+  right: 100%;
+}
+
+div.header span{
+box-shadow: 1px 1px 10px 1px #8f8f8f;
+}
+
+p.hovertool:hover .hiddentext {
+    visibility:visible;
+}
+
+
+/*from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp*/
+.nav-dropdown-wrapper {
+  float: left;
+  overflow: hidden;
+}
+
+div.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4a4a4a;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+/* Show the dropdown menu on hover */
+.nav-dropdown-wrapper:hover .dropdown-content {
+  display: block;
+}
+
+/*
+ * Off Canvas sidebar at medium breakpoint
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 992px) {
+
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -33%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 33%;
+    margin-left: -6px;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 33%;
+    height: 100%;
+  }
+}
+
+/*
+ * Off Canvas wider at sm breakpoint
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 34em) {
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -45%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 45%;
+    margin-left: -6px;
+  }
+  
+  .sidebar-offcanvas {
+    width: 45%;
+  }
+}
+
+.card {
+    overflow:hidden;
+}
+
+.card-body .rotate {
+    z-index: 8;
+    float: right;
+    height: 100%;
+}
+
+.card-body .rotate i {
+    color: rgba(20, 20, 20, 0.15);
+    position: absolute;
+    left: 0;
+    left: auto;
+    right: -10px;
+    bottom: 0;
+    display: block;
+    -webkit-transform: rotate(-44deg);
+    -moz-transform: rotate(-44deg);
+    -o-transform: rotate(-44deg);
+    -ms-transform: rotate(-44deg);
+    transform: rotate(-44deg);
+}
+
+div.dropdown-content a.nav-link{
+    padding-left: .5rem;
+    }
+
+
+
