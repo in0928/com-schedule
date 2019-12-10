@@ -1,27 +1,4 @@
-//get tableId
-function getTableId() {
-    var tableId = "people-list-full";
-    var path_name = window.location.pathname;
-    switch(path_name){
-        case "/ba":
-            tableId = "ba-list-full";
-            break;
-        case "/dreams":
-            tableId = "dream-list-full";
-            break;
-        case "/places":
-            tableId = "place-list-full";
-            break;
-        case "/schedule":
-            tableId = "com-schedule";
-            break;
-        default:
-            tableId = "people-list-full"
-    };
-    return tableId;
-    };
-
-var tableId = getTableId();
+var tableId = "com-schedule"
 
 document.addEventListener("DOMContentLoaded", fill_dropdown(tableId));
 document.querySelector("#table-search").oninput = applySearch;

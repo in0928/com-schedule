@@ -1,0 +1,25 @@
+{% extends 'common.html' %}
+
+{% block title %}
+{{ t }}
+{% endblock %}
+
+{% block body %}
+<h3>Long Description</h3>
+<p style="font-size:20px;">
+    This website is created with the purpose of assisting IDEA members.
+    Please be aware of the fact that this website is only for viewing schedule of unions in Tokyo.
+    This cannot make reservation, nor anything else.<br>
+</p>
+<h5>Display Logic</h5><br>
+<ul>
+    <li>Similar events are putting together as one event, based on a simple string comparison.<br>
+        As a result, a event may appear as multiple events due to discrepancies in writing of different unions.</li>
+    <li>Can perform search, in other words, filter out results.</li>
+    <li>The schedule is refreshed every 6 hours.</li>
+    <li>"Schedule of Next Month" will be under the tab of "Schedule of This Month" on the first day of each month.</li>
+    <li>"Schedule of Next Month" will only be available when it is uploaded on COM page of IDEA.</li>
+</ul>
+<br>
+
+{% endblock %}
