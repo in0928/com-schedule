@@ -8,6 +8,7 @@ from pymongo import MongoClient
 from pymongo_fetcher import MongoFetcher
 import displaySchedule as ds
 
+
 app = Flask(__name__)
 
 current_year = datetime.now().year
@@ -24,7 +25,7 @@ mf = MongoFetcher()
 schedule_this_month_data = mf.schedule_this_month
 schedule_next_month_data = mf.schedule_next_month
 
-
+# TODO: add an entry for refresh time
 def get_schedule(this_month_date_list, next_month_date_list):
     this_month_event = []
     for day in this_month_date_list:
@@ -36,16 +37,17 @@ def get_schedule(this_month_date_list, next_month_date_list):
             else:
                 this_month_event.append(i)
 
-    # TODO: put this in a try catch block
     next_month_event = []
-    for day in next_month_date_list:
-        events = schedule_next_month_data.find({"date": day})
-        merged = ds.merge_rows(events)
-        for i in merged:
-            if i["content"] == "" or i["content"] == "Invisible":  # not show groups with no events
-                continue
-            else:
-                next_month_event.append(i)
+    # check if next month table is empty
+    if schedule_next_month_data.count() > 0:
+        for day in next_month_date_list:
+            events = schedule_next_month_data.find({"date": day})
+            merged = ds.merge_rows(events)
+            for i in merged:
+                if i["content"] == "" or i["content"] == "Invisible":  # not show groups with no events
+                    continue
+                else:
+                    next_month_event.append(i)
     return this_month_event, next_month_event
 
 
@@ -62,6 +64,7 @@ def home():
 def about():
     t = "About"
     return render_template("about.html", t=t)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

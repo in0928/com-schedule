@@ -5,39 +5,85 @@
 {% endblock %}
 
 {% block table %}
-    <form class="form-basic" action="" method="post">
-            <div class="col-lg-9 col-md-8" style="max-width:100%;">
-        <div class="table-responsive">
-    <table class="table table-striped" id="com-schedule">
-    <thead class="thead-inverse">
-    <tr>
-        <th></th>
-        <th>日付</th>
-        <th>ユニオン</th>
-        <th>内容</th>
-        <th>時間</th>
-        <th>SP</th>
-        <th>MC/AC</th>
-        <th>会場</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for entry in event_list %}
-    {%- if entry["content"] != ""%}
-    <tr>
-        <td id="going"><button type="submit">Going</button></td>
-        <td>{{ entry["date"] }}</td>
-        <td>{{ entry["union_name"] }}</td>
-        <td>{{ entry["content"] }}</td>
-        <td>{{ entry["time"] }}</td>
-        <td>{{ entry["SP"] }}</td>
-        <td>{{ entry["MC_AC"] }}</td>
-        <td>{{ entry["venue"] }}</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
-    </tbody>
-    </table></div></div>
-        </form>
+<div class="col main pt-5 mt-3">
+    <div class="card card-default card-body">
+        <ul id="tabsJustified" class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+                <a class="nav-link active" href="" data-target="#thismonth" data-toggle="tab">Hot People</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#nextmonth" data-toggle="tab">Useful Notes</a>
+            </li>
+        </ul>
+        <!--/tabs-->
+        <br>
+        <div id="tabsJustifiedContent" class="tab-content">
+            <div class="tab-pane active" id="thismonth">
+                <form class="form-basic" action="" method="post">
+                    <div class="col-lg-9 col-md-8" style="max-width:100%;">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="com-schedule">
+                                <thead class="thead-inverse">
+                                <tr>
+                                    <th></th>
+                                    <th>日付</th>
+                                    <th>ユニオン</th>
+                                    <th>内容</th>
+                                    <th>時間</th>
+                                    <th>SP</th>
+                                    <th>MC/AC</th>
+                                    <th>会場</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for entry in event_list %}
+                                {%- if entry["content"] != "" %}
+                                <tr>
+                                    <td id="going">
+                                        <button type="submit">Going</button>
+                                    </td>
+                                    <td>{{ entry["date"] }}</td>
+                                    <td>{{ entry["union_name"] }}</td>
+                                    <td>{{ entry["content"] }}</td>
+                                    <td>{{ entry["time"] }}</td>
+                                    <td>{{ entry["SP"] }}</td>
+                                    <td>{{ entry["MC_AC"] }}</td>
+                                    <td>{{ entry["venue"] }}</td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-{% endblock %}
+<!--            next month -->
+            <div class="tab-pane" id="nextmonth">
+                <form class="form-basic" action="" method="post">
+                    <div class="col-lg-9 col-md-8" style="max-width:100%;">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="com-schedule_next">
+                                <thead class="thead-inverse">
+                                <tr>
+                                    <th></th>
+                                    <th>日付</th>
+                                    <th>ユニオン</th>
+                                    <th>内容</th>
+                                    <th>時間</th>
+                                    <th>SP</th>
+                                    <th>MC/AC</th>
+                                    <th>会場</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <td>test</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            {% endblock %}
