@@ -1,4 +1,5 @@
 var tableId = "com-schedule"
+var tableId2 = "com-schedule-next"
 
 document.addEventListener("DOMContentLoaded", fill_dropdown(tableId));
 document.querySelector("#table-search").oninput = applySearch;
@@ -6,6 +7,8 @@ document.querySelector("#table-search").oninput = applySearch;
 function applySearch() {
     search(tableId);
     alternate(tableId);
+    search(tableId2);
+    alternate(tableId2);
 }
 
 
