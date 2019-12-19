@@ -62,9 +62,9 @@ th.freeze-col {
     min-width: 40%;
 }
 
-div.header p.search{
-    display: inline-block;
-    margin-top:0;
+div.header div.search-bar{
+    display: block;
+    margin:0;
 }
 
 div.header #search-by-col-name{
@@ -74,6 +74,13 @@ div.header #search-by-col-name{
 
 div.pt-5 {
     padding-top: 1rem !important;
+}
+
+div.header input[type="button"] {
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: 60px;
+    float: right;
 }
 
 @media screen and (max-width: 590px){
@@ -86,7 +93,7 @@ div.pt-5 {
         margin-left:10px;
         min-width:40%;
     }
-    div.header p.search {
+    div.header div.search-bar {
         width:100%;
     }
 }

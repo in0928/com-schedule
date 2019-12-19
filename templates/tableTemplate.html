@@ -12,10 +12,13 @@
     <br>
             <!--            search function-->
     <div class="header">
-        <h2>{{ t }}</h2>
-        <p class="search">コラムを選択
-            <select id="search-by-col-name"></select></p>
-        <input class="search" id="table-search" placeholder="検索したい文字列を入力">
+        <h2 style="display:inline-block">{{ t }}</h2>
+        <a href="{{ url_for('refresh') }}"><input type="button" value="日程を更新"></a>
+        <button type="button" onclick="{{ url_for('refresh') }} " class="refresh">日程を更新</button>
+        <div class="search-bar">コラムを選択
+            <select id="search-by-col-name"></select>
+        <input class="search" id="table-search" placeholder="検索したい文字列を入力"></div>
+
     </div>
             {% block table %}
             {% endblock %}

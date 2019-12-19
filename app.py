@@ -1,4 +1,5 @@
 import json
+import scraper
 from datetime import datetime
 import calendar
 from dateutil.relativedelta import relativedelta
@@ -59,6 +60,12 @@ def home():
     next_schdl = schedules[1]
     return render_template("schedule.html", this_schdl=this_schdl, next_schdl=next_schdl, t=t)
 
+
+@app.route("/")
+def refresh():
+    scraper.fetch_schedule()
+    print("Called")
+    return home
 
 @app.route("/about")
 def about():
