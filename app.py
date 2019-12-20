@@ -65,16 +65,16 @@ def home():
     return render_template("schedule.html", this_schdl=this_schdl, next_schdl=next_schdl, t=t, timestamp=timestamp, this_month=this_m, next_month=next_m)
 
 
-@app.route("/")
-def refresh():
-    scraper.fetch_schedule()
-    print("Called")
-    return home
-
 @app.route("/about")
 def about():
     t = "About"
     return render_template("about.html", t=t)
+
+
+@app.route("/contact")
+def contact():
+    t = "Contact"
+    return render_template("contact.html", t=t)
 
 
 if __name__ == "__main__":
