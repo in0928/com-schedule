@@ -3,7 +3,7 @@
 }
 
 div.header h2 {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .table-responsive{
@@ -76,11 +76,12 @@ div.pt-5 {
     padding-top: 1rem !important;
 }
 
-div.header input[type="button"] {
-    padding: 10px;
-    margin-left: 30px;
-    margin-right: 60px;
-    float: right;
+.timestamp{
+    color: lightsteelblue;
+    font-style: italic;
+    margin: 5px 20px 20px 20px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 590px){

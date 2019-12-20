@@ -25,6 +25,8 @@ next_month_date = [str(next_month) + "."+str(i+1) for i in range(next_num_days)]
 mf = MongoFetcher()
 schedule_this_month_data = mf.schedule_this_month
 schedule_next_month_data = mf.schedule_next_month
+timestamp = mf.schedule_this_month.find({"timestamp": {"$exists": "true"}})[0]
+timestamp = timestamp["timestamp"]
 
 # TODO: add an entry for refresh time
 def get_schedule(this_month_date_list, next_month_date_list):
@@ -58,7 +60,7 @@ def home():
     schedules = get_schedule(this_month_date, next_month_date)
     this_schdl = schedules[0]
     next_schdl = schedules[1]
-    return render_template("schedule.html", this_schdl=this_schdl, next_schdl=next_schdl, t=t)
+    return render_template("schedule.html", this_schdl=this_schdl, next_schdl=next_schdl, t=t, timestamp=timestamp)
 
 
 @app.route("/")

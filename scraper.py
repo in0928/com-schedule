@@ -72,6 +72,8 @@ def fetch_schedule():
     this_year_month = datetime.now().strftime("%Y-%m")
     next_year_month = (datetime.now() + relativedelta(months=1)).strftime("%Y-%m")
     session = login()
+    schedule_this_month.insert_one({"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+    schedule_next_month.insert_one({"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
 
     for union, id in tokyo_union_ids.items():
         print(f"START fetching for {union}")
