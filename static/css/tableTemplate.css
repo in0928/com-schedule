@@ -69,7 +69,8 @@ div.header div.search-bar{
 
 div.header #search-by-col-name{
     padding: 10px 30px 10px 10px;
-    min-width: 40%;
+    max-width: 50%;
+    margin-bottom: 5px;
 }
 
 div.pt-5 {
@@ -79,7 +80,7 @@ div.pt-5 {
 .timestamp{
     color: lightsteelblue;
     font-style: italic;
-    margin: 5px 20px 20px 20px;
+    margin: 5px 20px 20px 0px;
     font-size: 14px;
     font-weight: bold;
 }

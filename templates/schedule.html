@@ -9,10 +9,10 @@
     <div class="card card-default card-body" style="padding:0;">
         <ul id="tabsJustified" class="nav nav-tabs nav-justified">
             <li class="nav-item">
-                <a class="nav-link active" href="" data-target="#thismonth" data-toggle="tab">This Month</a>
+                <a class="nav-link active" href="" data-target="#thismonth" data-toggle="tab">{{ this_month }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" data-target="#nextmonth" data-toggle="tab">Next Month</a>
+                <a class="nav-link" href="" data-target="#nextmonth" data-toggle="tab">{{ next_month }}</a>
             </li>
         </ul>
         <!--/tabs-->
@@ -59,7 +59,7 @@
 <!--            next month -->
             <div class="tab-pane" id="nextmonth">
                 <form class="form-basic" action="" method="post">
-                    <div class="col-lg-9 col-md-8" style="max-width:100%;">
+                    <div class="col-lg-9 col-md-8" style="max-width:100%;padding:0">
                         <div class="table-responsive">
                             <table class="table table-striped" id="com-schedule-next">
                                 <thead class="thead-inverse">

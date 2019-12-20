@@ -60,7 +60,9 @@ def home():
     schedules = get_schedule(this_month_date, next_month_date)
     this_schdl = schedules[0]
     next_schdl = schedules[1]
-    return render_template("schedule.html", this_schdl=this_schdl, next_schdl=next_schdl, t=t, timestamp=timestamp)
+    this_m = str(current_year) + "年" + str(current_month) + "月"
+    next_m = str(next_month_year) + "年" + str(next_month) + "月"
+    return render_template("schedule.html", this_schdl=this_schdl, next_schdl=next_schdl, t=t, timestamp=timestamp, this_month=this_m, next_month=next_m)
 
 
 @app.route("/")
