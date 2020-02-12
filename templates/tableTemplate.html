@@ -13,6 +13,8 @@
             <!--            search function-->
     <div class="header">
         <h2 style="display:inline-block">{{ t }}</h2><p class="timestamp">Last Updated: {{ timestamp }}</p>
+        <a href="{{ url_for('update') }}"><button>Update</button></a>
+        <p>Wait 1-2 minutes, the page will be refreshed automatically</p>
         <div class="search-bar">コラムを選択
             <select id="search-by-col-name"></select>
         <input class="search" id="table-search" placeholder="検索したい文字列を入力"></div>

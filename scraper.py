@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 from pymongo import MongoClient
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+import time
 
 client = MongoClient("mongodb+srv://in0928:trybest920928LAISAI@cluster0-nfgyd.gcp.mongodb.net/test?retryWrites=true&w=majority")  # host uri
 db = client.NSDB  # Select the database
@@ -54,6 +55,8 @@ def create_urls(group_id, year_month):
 
 # call this upon clicking refresh
 def fetch_schedule():
+    schedule_this_month.delete_many({})
+    schedule_next_month.delete_many({})
     tokyo_union_ids = {"AiM": "group=91",
                        "AXIS": "group=12",
                        "BLAST": "group=20",
@@ -88,6 +91,8 @@ def fetch_schedule():
         print("------")
 
 if __name__ == "__main__":
+    start_time = time.time()
     schedule_this_month.delete_many({})
     schedule_next_month.delete_many({})
     fetch_schedule()
+    print(f"EXECUTION TIME: {time.time()-start_time} seconds")

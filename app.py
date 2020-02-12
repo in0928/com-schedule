@@ -8,6 +8,7 @@ from bson import ObjectId  # For ObjectId to work
 from pymongo import MongoClient
 from pymongo_fetcher import MongoFetcher
 import displaySchedule as ds
+import scraper as scp
 
 
 app = Flask(__name__)
@@ -69,6 +70,11 @@ def home():
 def about():
     t = "About"
     return render_template("about.html", t=t)
+
+@app.route("/update")
+def update():
+    scp.fetch_schedule()
+    return redirect("/")
 
 
 @app.route("/contact")
